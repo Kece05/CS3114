@@ -16,10 +16,10 @@ public class SortUtils
 
 
 /**
-     * Copy a file
+     * Copy a file from source to destination
      * @param sourcePath source path
      * @param destinationPath dest path
-     * @throws IOException
+     * @throws IOException if file access fails
      */
     public static void copyFile(String sourcePath, String destinationPath)
         throws IOException {

@@ -4,6 +4,7 @@
 .DS_Store
 Thumbs.db
 <<<<<<< HEAD
+<<<<<<< HEAD
 /bin/
 *.class
 *.jar
@@ -28,4 +29,7 @@ hs_error_pid*
 *.app
 =======
 >>>>>>> branch 'master' of https://web-cat.cs.vt.edu/Web-CAT/WebObjects/Web-CAT.woa/git/StudentProject/e944d50a-f75d-452b-9a93-1f18c6bfce79
+/bin/
+=======
+>>>>>>> branch 'master' of https://web-cat.cs.vt.edu/Web-CAT/WebObjects/Web-CAT.woa/git/StudentProject/a8e56e72-f0b6-4e72-a9bc-1b437695672e
 /bin/

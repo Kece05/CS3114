@@ -39,7 +39,10 @@ public class Generator {
             RandomAccessFile out = new RandomAccessFile(runFile, "rw");
             
             // Creating an input/output buffer sort
-            BufferSort i = new BufferSort(new RandomAccessFile(inputFile, "r"), memPool, 0, BLOCK_SIZE);
+            RandomAccessFile inBuf =
+                new RandomAccessFile(inputFile, "r");
+            BufferSort i = new BufferSort(
+                inBuf, memPool, 0, BLOCK_SIZE);
             BufferSort o = new BufferSort(out, memPool, BLOCK_SIZE, BLOCK_SIZE);
             
             // Setting up inital parameters

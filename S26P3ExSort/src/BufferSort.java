@@ -72,8 +72,43 @@ public class BufferSort {
         // Reading the specific byte array
         buffer.limit(bytesToRead);
     }
-    
-    
+
+    /**
+     * Reads a block limited to a maximum number of bytes, used for
+     * run-bounded reads in multiway merge
+     *
+     * @param pos The position in the file
+     * @param maxBytes The maximum number of bytes to read
+     * @throws IOException An error if failed to access position in the buffer
+     */
+    public void readBlock(long pos, int maxBytes) throws IOException {
+        // Accessing locale position in file
+        this.currentFilePos = pos;
+        file.seek(pos);
+
+        // Clearing the buffering pool
+        buffer.clear();
+
+        // Limit by both buffer capacity and maxBytes
+        int bytesToRead = Math.min(buffer.capacity(), maxBytes);
+
+        if (bytesToRead > 0) {
+            file.readFully(buffer.array(), buffer.arrayOffset(), bytesToRead);
+        }
+        // Reading the specific byte array
+        buffer.limit(bytesToRead);
+    }
+
+    /**
+     * Returns the number of bytes currently buffered for writing
+     *
+     * @return the number of bytes written to the buffer
+     */
+    public int bufferedBytes() {
+        return buffer.position();
+    }
+
+
     /**
      * This method writes the content into the give file and position
      * 
